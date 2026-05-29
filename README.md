@@ -1,2 +1,2 @@
-# CodingCamp-25May2026-dwiptrhutami.git
+# CodingCamp-25May2026-dwiptrhutami
 CCSE - Batch May 25th, 2026 - Mini Project
