@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense &amp; Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <h1>Expense &amp; Budget Visualizer</h1>
+
+    <!-- Total Balance Card -->
+    <div class="balance-card">
+      <p class="balance-label">Total Balance</p>
+      <p class="balance-amount" id="totalBalance">$0.00</p>
+    </div>
+
+    <!-- Add Transaction Form -->
+    <div class="form-card">
+      <h2>Add Transaction</h2>
+      <div class="form-fields">
+        <input
+          type="text"
+          id="txName"
+          placeholder="Item name"
+          maxlength="60"
+          autocomplete="off"
+        />
+        <input
+          type="number"
+          id="txAmount"
+          placeholder="Amount ($)"
+          step="0.01"
+          min="0.01"
+        />
+        <select id="txCategory">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Fun">Fun</option>
+        </select>
+        <button class="btn-add" id="addBtn">Add Transaction</button>
+      </div>
+      <p class="form-error" id="formError" aria-live="polite"></p>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom-grid">
+
+      <!-- Left: Transaction List -->
+      <div class="list-card">
+        <h2>Transactions</h2>
+        <ul class="tx-list" id="txList" aria-label="Transaction list"></ul>
+        <p class="empty-msg" id="listEmpty">No transactions yet.</p>
+      </div>
+
+      <!-- Right: Pie Chart -->
+      <div class="chart-card">
+        <h2>Spending by Category</h2>
+        <div class="chart-wrap">
+          <canvas id="pieChart" aria-label="Spending by category" role="img"></canvas>
+        </div>
+        <p class="empty-msg" id="chartEmpty">No data yet.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
